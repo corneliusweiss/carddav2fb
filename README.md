@@ -2,7 +2,7 @@
 
 Features:
 
-* Allows to import CardDAV-based VCard contacts (e.g. from 'owncloud') to a phonebook in a AVM FRITZ!Box
+* Allows to import CardDAV-based VCard contacts (e.g. from 'owncloud' or 'tine20') to a phonebook in a AVM FRITZ!Box
 * CardDAV import includes photo images specified in VCards
 * No modification of FRITZ!Box firmware (aka FRITZ!OS) required
 * Definition of multiple CardDAV accounts and "folders" possible
@@ -81,6 +81,18 @@ Now you should have everything setup and checked out to a 'carddav2fb' directory
 	  'user' => '<USERNAME>',
 	  'pw' => '<PASSWORD>'
 	);
+
+## config.php notes for tine20
+To get the CardDAV url click the right mouse button on a specific addressbok and choose "Information". If you want to 
+get all accessible contacts at once, use:
+
+	https://tine.example.com/addressbooks/<USERID>/contacts
+
+
+The standard photo size via CardDAV is 32KB. Unfortunally 32KB pics don't look very nice on the FritzFon display. 
+As Tine 2.0 stores the photos in full resuluton internally, you can tells Tine 2.0 (> 2016.03) to include photos in given size.
+
+	$config['max_photo_size'] = 64000;
 
 ## Note
 This script is using third-party libraries for downloading VCards from CardDAV servers based on the following packages

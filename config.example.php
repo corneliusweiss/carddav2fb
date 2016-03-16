@@ -39,6 +39,9 @@ $config['orgname'] = false; // include organisation (company) in fullname if exi
 // optional: import only contacts of the given groups
 //$config['group_filter'] = array('Arzt','Familie','Freunde','Friseur','Geschäftlich','Hotline','Notruf','Restaurant','Shops');
 
+// optional: ask server for given photo size (supported by tine20)
+//$config['max_photo_size'] = 64000;
+
 // group name of 'important' callers
 $config['group_vip'] = 'VIP';
 

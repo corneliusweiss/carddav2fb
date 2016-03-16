@@ -174,8 +174,13 @@ class CardDAV2FB
 
     foreach($this->config['carddav'] as $conf)
     {
-      print " [" . $snum . "]: " . $conf['url'] . " ";
-      $carddav = new CardDavPHP\CardDavBackend($conf['url']);
+      $url = $conf['url'];
+      print " [" . $snum . "]: " . $url . " ";
+
+      // append photo size?
+      $url .= isset($conf['max_photo_size']) ? "?{$conf['max_photo_size']}" : '';
+
+      $carddav = new CardDavPHP\CardDavBackend($url);
       $carddav->setAuth($conf['user'], $conf['pw']);
 
       // set the vcard extension in case the user
